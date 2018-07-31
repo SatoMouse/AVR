@@ -6,8 +6,8 @@
 
 #define OFF_POS 8
 #define ON_POS 10
-//-90‹  4
-// 90‹ 10
+//-90Â°  4
+// 90Â° 10
 
 ISR(PCINT0_vect){
 	OCR0B = ON_POS;
@@ -26,7 +26,7 @@ int main(void)
 	PCMSK = 0x10;
 
 	TCCR0A |= 1<<WGM01 | 1<<WGM00 | 1<<COM0B1;
-	TCCR0B |= 1<<WGM02 | 1<<CS02;// •ªü”ä256
+	TCCR0B |= 1<<WGM02 | 1<<CS02;// åˆ†å‘¨æ¯”256
 	OCR0A = 93; // 1.2MHz/50Hz/256-1=94 - 1 = 93
 	
 	OCR0B = OFF_POS;
@@ -37,3 +37,4 @@ int main(void)
 
 	while (1){}
 }
+
